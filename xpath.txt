@@ -1,7 +1,7 @@
-Links = //h2/a/@href
-Title = //h1/text()
-Subheading = //h2[@class="h4"]/text()
-Lead = //h2[@class="h3"]/text()
-AuthorByline = //div[@class="author-name"]/text()
-Body = //text()[parent::h2[parent::div[@class="article-main-content article-text "]]| ancestor::p[parent::div[@class="article-main-content article-text "]]]
-Tags = //div[@class="article-tags"]/a/text()
+Links = '//h2/a/@href[contains(.,"pagina12") and not(contains(.,"suplementos"))]'
+Title = '//h1/text()'
+Subheading = '//h2[@class="h4"]/text()'
+Lead = '//h2[@class="h3"]/text()'
+AuthorByline = '//div[@class="author-name"]/text()'
+Body = '//text()[ancestor::h2[parent::div[@class="article-main-content article-text "]]| ancestor::p[parent::div[@class="article-main-content article-text "]]]'
+Tags = '//div[@class="article-tags"]/a/text()'
