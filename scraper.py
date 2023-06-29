@@ -52,7 +52,10 @@ def parse_home():
             parsed = html.fromstring(home)
             links_to_articles = parsed.xpath(XPATH_LINKS_TO_ARTICLES)
             today = datetime.datetime.today().strftime('%Y-%m-%d')
-            folder = r'./historical_archive/' + today
+            main_folder = r'./historical_archive/'
+            if not os.path.isdir(main_folder):
+                os.mkdir(main_folder)
+            folder = main_folder + today
             if not os.path.isdir(folder):
                 os.mkdir(folder)
             for link in links_to_articles:
